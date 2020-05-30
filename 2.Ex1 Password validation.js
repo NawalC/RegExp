@@ -33,7 +33,18 @@ The belows are invalids because
   - "12qw"      doesn't contain uppercase letter, special symbol and less than 5 characters long
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let checkPassword = [];
+  let minNumberofChars = 5;
+  let checkConditions = /([a-z])([A-Z])([!\$\%\#\.])$/g;
+
+  if (passwords.test(checkConditions) && passwords.length >= minNumberofChars) {
+    return true;
+  }
+  //  let removeDuplicate = checkPassword.map(x =>
+
+  //   })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
