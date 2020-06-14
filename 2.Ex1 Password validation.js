@@ -34,21 +34,47 @@ The belows are invalids because
 */
 
 function validatePasswords(passwords) {
-  let checkPassword = [];
+  //let checkPassword = [];
   let minNumberofChars = 5;
-  let checkConditions = /([a-z])([A-Z])([!\$\%\#\.])$/g;
+  let checkConditions = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!#$%.*()_+}])/;
+  
+  
+ let checkPassword =  passwords.map(password => {
 
-  if (passwords.test(checkConditions) && passwords.length >= minNumberofChars) {
-    return true;
-  }
-  //  let removeDuplicate = checkPassword.map(x =>
+    if ((password.match(checkConditions)) && (password.length >= minNumberofChars))
+       
+       return true
+    
+     else if (passwords.indexOf() != passwords){
+       return false
+     }
+       
+    
 
-  //   })
+  })
+  
+  
+
+
+  console.log(checkPassword);
+  
+  
+  
 }
+  
+  
+
+ 
+
+
+
+
+ 
+  
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"];
+let passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"];
 const passwords2 = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"];
 
 function arraysEqual(a, b) {
